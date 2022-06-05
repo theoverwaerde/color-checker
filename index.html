@@ -1,8 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+
+    <!-- Primary Meta Tags -->
     <title>Color Checker</title>
+    <meta name="title" content="Color Checker">
+    <meta name="description" content="Check text color with background color">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#09b607">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://color.theoverwaerde.fr/">
+    <meta property="og:title" content="Color Checker">
+    <meta property="og:description" content="Check text color with background color">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://color.theoverwaerde.fr/">
+    <meta property="twitter:title" content="Color Checker">
+    <meta property="twitter:description" content="Check text color with background color">
+    <meta name="twitter:site" content="@TheoTwaerd">
+    <meta name="twitter:creator" content="@TheoTwaerd">
+
+
+    <meta charset="UTF-8">
     <style>
         html,body {
             margin: 0;
@@ -50,6 +73,10 @@
     </p>
 
     <script type="text/javascript">
+
+        window.onpopstate = getColor;
+        window.onhashchange = getColor;
+
         function getColor()
         {
             const url = location.hash;
@@ -60,6 +87,12 @@
                 console.log("base url color " + url);
                 document.getElementById('colorPicker').value = url;
                 colorChange(url);
+            }
+            else
+            {
+                const color = '#FFFFFF';
+                document.getElementById('colorPicker').value = color;
+                colorChange(color);
             }
         }
 
