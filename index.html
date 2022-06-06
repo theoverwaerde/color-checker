@@ -101,6 +101,8 @@
 
         function colorChange(color)
         {
+            location.hash = color;
+
             if (validColor(color))
             {
                 console.log("valid " + color);
@@ -186,7 +188,7 @@
 
         function randomColor()
         {
-            const letters = '0123456789ABCDEF';
+            const letters = '0123456789abcdef';
             let color = '#';
             for (let i = 0; i < 6; i++)
             {
